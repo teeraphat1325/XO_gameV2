@@ -19,10 +19,12 @@ public class XO_game {
 
     public static void main(String[] args) {
         printWelcome();
-        showTable();
-        showTurn();
-        switchTurn();
-        intpuRowCol();
+        while (true) {
+            showTable();
+            showTurn();
+            intpuRowCol();
+            switchTurn();
+        }
 
     }
 
@@ -53,8 +55,8 @@ public class XO_game {
 
     private static void intpuRowCol() {
         System.out.print("please enter(row,col) : ");
-        row = sc.nextInt();
-        col = sc.nextInt();
-        System.out.println(row+" "+col);
+        row = sc.nextInt() - 1;
+        col = sc.nextInt() - 1;
+        table[row][col] = turn;
     }
 }
