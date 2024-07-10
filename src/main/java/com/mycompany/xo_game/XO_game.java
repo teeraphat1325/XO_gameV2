@@ -11,11 +11,15 @@ package com.mycompany.xo_game;
 public class XO_game {
 
     private static char[][] table = {{'-','-','-'},{'-','-','-'},{'-','-','-'}};
+    private static char turn = 'X';
 
 
     public static void main(String[] args) {
         printWelcome();
         showTable();
+        showTurn();
+        switchTurn();
+        
     }
 
     private static void printWelcome() {
@@ -29,5 +33,17 @@ public class XO_game {
             }
             System.out.println(" ");
         }
+    }
+
+    private static void showTurn() {
+        System.out.println("Turn "+turn);
+    }
+
+    private static void switchTurn() {
+            if(turn == 'X') {
+                turn = 'O';
+            }else {
+                turn = 'X';
+            }
     }
 }
