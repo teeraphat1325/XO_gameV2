@@ -26,6 +26,7 @@ public class XO_game {
             intpuRowCol();
             if (isfinish()) {
                 showTable();
+                showPlayerWin();
                 break;
             }
             switchTurn();
@@ -113,9 +114,18 @@ public class XO_game {
     }
 
     private static boolean checkDraw() {
-        if(count==9){
+        if (count == 9) {
             return true;
         }
         return false;
+    }
+
+    private static void showPlayerWin() {
+        if (checkDraw()) {
+            System.out.println("Draw !!!");
+        }
+        if (checkWin()) {
+            System.out.println(turn + " Win!!!");
+        }
     }
 }
