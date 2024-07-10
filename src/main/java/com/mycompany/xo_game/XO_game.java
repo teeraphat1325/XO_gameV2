@@ -16,6 +16,7 @@ public class XO_game {
     private static Scanner sc = new Scanner(System.in);
     private static int row;
     private static int col;
+    private static int count = 0;
 
     public static void main(String[] args) {
         printWelcome();
@@ -24,11 +25,11 @@ public class XO_game {
             showTurn();
             intpuRowCol();
             if (isfinish()) {
+                showTable();
                 break;
             }
             switchTurn();
         }
-        showTable();
     }
 
     private static void printWelcome() {
@@ -61,6 +62,7 @@ public class XO_game {
         row = sc.nextInt() - 1;
         col = sc.nextInt() - 1;
         table[row][col] = turn;
+        count++;
     }
 
     private static boolean isfinish() {
@@ -111,7 +113,9 @@ public class XO_game {
     }
 
     private static boolean checkDraw() {
+        if(count==9){
+            return true;
+        }
         return false;
     }
-
 }
