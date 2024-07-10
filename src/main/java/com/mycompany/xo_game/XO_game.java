@@ -10,6 +10,9 @@ package com.mycompany.xo_game;
  */
 public class XO_game {
 
+    private static char[][] table = {{'-','-','-'},{'-','-','-'},{'-','-','-'}};
+
+
     public static void main(String[] args) {
         printWelcome();
         showTable();
@@ -22,7 +25,7 @@ public class XO_game {
     private static void showTable() {
         for(int r=0;r<3;r++) {
             for(int c=0;c<3;c++) {
-                System.out.print("- ");
+                System.out.print(table[r][c]+" ");
             }
             System.out.println(" ");
         }
