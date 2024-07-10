@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 package com.mycompany.xo_game;
@@ -23,9 +23,12 @@ public class XO_game {
             showTable();
             showTurn();
             intpuRowCol();
+            if (isfinish()) {
+                break;
+            }
             switchTurn();
         }
-
+        showTable();
     }
 
     private static void printWelcome() {
@@ -59,4 +62,36 @@ public class XO_game {
         col = sc.nextInt() - 1;
         table[row][col] = turn;
     }
+
+    private static boolean isfinish() {
+        if (checkWin()) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean checkWin() {
+        if (checkRow()) {
+            return true;
+        }
+        if (checkCol()) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean checkRow() {
+        if (table[row][0] == 'X' && table[row][1] == 'X' && table[row][2] == 'X') {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean checkCol() {
+        if (table[0][col] == 'X' && table[1][col] == 'X' && table[2][col] == 'X') {
+            return true;
+        }
+        return false;
+    }
+
 }
