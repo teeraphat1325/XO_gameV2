@@ -72,4 +72,13 @@ public class XO_gameTest {
         boolean result = XO_game.checkRow(table, turn, row);
         assertFalse(result);
     }
+    
+    @Test
+    public void checkRow_Row1_false_ByX() {
+        char[][] table = {{'-', '-', '-'}, {'X', 'X', '-'}, {'-', '-', '-'}};
+        char turn = 'X';
+        int row = 1;
+        boolean result = XO_game.checkRow(table, turn, row);
+        assertFalse(result);
+    }
 }
